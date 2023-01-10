@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Technologies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @technologies.each do |technology| %>
+      <tr>
+        <td><%= link_to technology.name, browser_technology_path(technology.name) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create New Repository', new_repository_path %>

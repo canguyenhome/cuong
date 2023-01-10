@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @repository.name %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @repository.owner %>
+</p>
+
+<p>
+  <strong>Hierarchy:</strong>
+  <%= @repository.hierarchy_id %>
+</p>
+
+<p>
+  <strong>Star Count:</strong>
+  <%= @repository.stargazer_count %>
+</p>
+
+<p>
+  <strong>Folk Count:</strong>
+  <%= @repository.folk_count %>
+</p>
+
+<%= link_to 'Edit', edit_repository_path(@repository) %> |
+<%= link_to 'Back', repositories_path %>

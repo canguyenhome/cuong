@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Repositories</h1>
+
+<h2>Technology: <%= @technology.name %></h2>
+<h2>Category: <%= @category.name %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Owner</th>
+      <th>Name</th>
+       <th>Star Count</th>
+       <th>Fork Count</th>
+       <th>Days Since Last Commit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @repositories.each do |repository| %>
+      <tr>
+        <td><%= repository.owner %></td>
+        <td><%= link_to repository.name, browser_repository_path(@technology.name, @category.name, repository.owner, repository.name) %></td>
+        <td><%= repository.stargazer_count %></td>
+        <td><%= repository.fork_count %></td>
+        <td><%= repository.since_last_commit %> days</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', browser_technology_path(@technology.name) %>

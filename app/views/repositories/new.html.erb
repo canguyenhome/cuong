@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>New Repository</h1>
+
+<%= form_for(:repository, url: repositories_path) do |f| %>
+      <%= f.label :technology %>
+      <%= f.text_field :technology %>
+      
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+      
+      <%= f.label :repository %>
+      <%= f.text_field :repository %>
+
+      <%= f.submit "Create repo", class: "btn btn-primary" %>
+    <% end %>
